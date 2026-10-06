@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+elasticsearch:
+  url: http://elasticsearch:9200
+
+neo4j:
+  uri: bolt://neo4j:7687
+  username: neo4j
+  password: password
+
+openai:
+  api-key: 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

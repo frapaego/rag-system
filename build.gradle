@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.5'
+    id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'es.frapaego'
+version = '0.0.1-SNAPSHOT'
+description = 'RAG system example with Spring Boot and LangChain4j'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+    // LLM
+    implementation 'dev.langchain4j:langchain4j:0.30.0'
+    implementation 'dev.langchain4j:langchain4j-open-ai:0.30.0'
+
+    // Elasticsearch (nuevo cliente)
+    implementation 'co.elastic.clients:elasticsearch-java:8.12.0'
+    implementation 'org.apache.httpcomponents.client5:httpclient5:5.2.1'
+
+    // Neo4j
+    implementation 'org.neo4j.driver:neo4j-java-driver:5.18.0'
+
+    // Redis
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+}
